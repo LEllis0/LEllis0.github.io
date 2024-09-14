@@ -22,6 +22,7 @@ p {
   font-size: 1.1rem;
 }
 
+/* Navbar */
 .navbar {
   background-color: #333;
   padding: 10px;
@@ -46,4 +47,32 @@ p {
 
 .navbar-link:hover {
   text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-icon {
+  color: white;
+  font-size: 30px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #0077b5; /* LinkedIn blue or any color you want */
 }

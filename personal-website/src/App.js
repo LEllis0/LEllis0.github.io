@@ -5,6 +5,7 @@ import Services from './components/Services';
 import Blog from './components/Blog';
 import NavBar from './components/NavBar';
 import NotFound from './components/NotFound';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/blog" element={<Blog/>}  />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
     </Router>
   );
 }
