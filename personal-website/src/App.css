@@ -1,31 +1,56 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: 'Myriad Pro'; 
+  background-color: #f5f5f7; /* Light gray background */
+  color: #333; /* Dark gray text for contrast */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
+/* Sections */
 section {
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 1200px; /* Centered content */
+  background-color: #fff; /* White background for sections */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.home-section {
+  padding-top: 80px; /* Adjust this value to the height of your navbar */
+  margin: 20px; /* Optional margin for spacing */
+}
+
+/* Typography */
+h1, h2 {
+  font-weight: 700; /* Bold text for headings */
+  color: #1d1d1f; /* Dark text for high contrast */
 }
 
 h1 {
-  color: #333;
+  font-size: 3rem; /* Large headings */
+  margin-bottom: 20px;
 }
 
 h2 {
-  color: #292ba492;
-}
-
-p {
-  font-size: 1.1rem;
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #333;
-  padding: 10px;
+  background-color: #000000; /* Black background for navbar */
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar is on top */
 }
 
 .navbar-list {
@@ -36,28 +61,32 @@ p {
 }
 
 .navbar-item {
-  margin-right: 20px;
+  margin: 0 15px;
 }
 
 .navbar-link {
-  color: white;
+  color: #fff; /* White text for contrast */
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
+  letter-spacing: 0.5px; /* Slight letter spacing */
+  transition: transform 0.3s ease, color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for scaling, color change, and border */
 }
 
 .navbar-link:hover {
-  text-decoration: underline;
+  transform: scale(1.2); /* Scale the link to 120% of its original size */
+  -webkit-transform: scale(1.2); /* For Safari */
+  -ms-transform: scale(1.2); /* For IE 9 */
+  color: #e0e0e0; /* Slightly lighter color on hover (optional) */
 }
 
 /* Footer */
 .footer {
-  background-color: #333;
-  padding: 20px 0;
+  background-color: #000; /* Black background for footer */
+  padding: 40px 0;
   text-align: center;
   position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
+  color: #fff; /* White text */
 }
 
 .footer-content {
@@ -67,12 +96,37 @@ p {
 }
 
 .footer-icon {
-  color: white;
-  font-size: 30px;
-  margin: 0 10px;
-  transition: color 0.3s ease;
+  color: #fff; /* White color for the icon */
+  font-size: 30px; /* Default size of the icon */
+  margin: 0 15px; /* Spacing between icons */
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for scaling, color change, and shadow */
 }
 
 .footer-icon:hover {
-  color: #0077b5; /* LinkedIn blue or any color you want */
+  color: #0071e3; /* Change color on hover (Apple blue or your chosen color) */
+  transform: scale(1.2); /* Scale the icon to 120% of its original size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Blog Section */
+.blog-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column width */
+  gap: 20px; /* Spacing between blocks */
+}
+
+.blog-post {
+  background-color: #fff; /* White background for blog posts */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px;
+}
+
+/* Optional: Adjustments for headings and text */
+.blog-post h2 {
+  margin-top: 0;
+}
+
+.blog-post p {
+  margin-bottom: 15px;
 }

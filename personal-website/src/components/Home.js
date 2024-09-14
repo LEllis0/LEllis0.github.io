@@ -1,12 +1,12 @@
 import React from 'react';
+import '../App.css';
 
-const AboutMe = () => {
+const Home = () => {
   return (
-    <section>
-      <h1>About Me</h1>
+    <section className='home-section'>
       <p>Hi! I'm Lewis, a young professional working in the financial sector. I help students and professionals achieve their academic and career goals.</p>
     </section>
   );
 };
 
-export default AboutMe;
+export default Home;
