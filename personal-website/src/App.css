@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Myriad Pro'; 
+  font-family: myriad-pro; 
   background-color: #f5f5f7; /* Light gray background */
   color: #333; /* Dark gray text for contrast */
   margin: 0;
@@ -44,13 +44,19 @@ h2 {
   background-color: #000000; /* Black background for navbar */
   padding: 20px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000; /* Ensure the navbar is on top */
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+/* Add shadow on navbar hover */
+.navbar:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow on hover */
 }
 
 .navbar-list {
@@ -67,16 +73,36 @@ h2 {
 .navbar-link {
   color: #fff; /* White text for contrast */
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12px;
   letter-spacing: 0.5px; /* Slight letter spacing */
-  transition: transform 0.3s ease, color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for scaling, color change, and border */
+  position: relative; /* Required for the ::after element */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scaling and color change */
 }
 
+/* Smooth underline effect */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px; /* Position the underline slightly below the text */
+  left: 0;
+  background-color: #e0e0e0; /* Underline color */
+  transform: scaleX(0); /* Start with no underline */
+  transform-origin: right; /* Start animation from the right */
+  transition: transform 0.3s ease-in-out; /* Smooth underline animation */
+}
+
+/* Hover state for the link */
 .navbar-link:hover {
   transform: scale(1.2); /* Scale the link to 120% of its original size */
-  -webkit-transform: scale(1.2); /* For Safari */
-  -ms-transform: scale(1.2); /* For IE 9 */
-  color: #e0e0e0; /* Slightly lighter color on hover (optional) */
+  color: #e0e0e0; /* Slightly lighter color on hover */
+}
+
+/* Animate the underline on hover */
+.navbar-link:hover::after {
+  transform: scaleX(1); /* Expand the underline */
+  transform-origin: left; /* Animate from left to right */
 }
 
 /* Footer */
@@ -84,7 +110,7 @@ h2 {
   background-color: #000; /* Black background for footer */
   padding: 40px 0;
   text-align: center;
-  position: fixed;
+  position: relative;
   width: 100%;
   color: #fff; /* White text */
 }
@@ -111,22 +137,57 @@ h2 {
 /* Blog Section */
 .blog-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column width */
-  gap: 20px; /* Spacing between blocks */
+  margin-top: 70px;
+  margin-bottom: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* Responsive columns */
+  gap: 25px; /* Spacing between blocks */
+  padding: 40px; /* Add some padding around the grid */
+  background-color: #f9f9f9; /* Light background for the blog section */
 }
 
+/* Blog Post Card */
 .blog-post {
   background-color: #fff; /* White background for blog posts */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  padding: 20px;
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow for more depth */
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  overflow: hidden; /* Ensure nothing overflows outside the card */
 }
 
-/* Optional: Adjustments for headings and text */
+/* Hover Effect for Blog Post */
+.blog-post:hover {
+  transform: scale3d(1.02,1.02,1.02); /* Lift the card on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Blog Post Title */
 .blog-post h2 {
+  font-size: 24px; /* Larger title */
   margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600; /* Bolder title */
+  color: #333; /* Darker text for better readability */
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
+/* Hover Effect for Blog Post Title */
+.blog-post:hover h2 {
+  color: #007bff; /* Change color on hover (adjust to your brand color) */
+}
+
+/* Blog Post Paragraphs */
 .blog-post p {
-  margin-bottom: 15px;
+  font-size: 16px; /* Larger text for better readability */
+  line-height: 1.6; /* Spacing between lines */
+  margin-bottom: 20px;
+  color: #555; /* Softer gray color for text */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 600px) {
+  .blog-section {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    padding: 20px;
+  }
 }
